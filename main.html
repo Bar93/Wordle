@@ -6,7 +6,7 @@
     <script src="script.js" type="text/javascript"></script>
     <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
+<body onload=alert(game.secWord)>
 <h1> Wordle</h1>
 
 <div class="game-board">
@@ -20,33 +20,33 @@
 </div>
 <div id="keyboard-cont">
     <div class="first-row">
-        <button class="keyboard-button" onclick="setLetter('ק')">ק</button>
-        <button class="keyboard-button" onclick="setLetter('ר')">ר</button>
-        <button class="keyboard-button" onclick="setLetter('א')">א</button>
-        <button class="keyboard-button" onclick="setLetter('ט')">ט</button>
-        <button class="keyboard-button" onclick="setLetter('ו')">ו</button>
-        <button class="keyboard-button" onclick="setLetter('פ')">פ</button>
+        <button class="keyboard-button" id="ק" onclick="setLetter('ק')">ק</button>
+        <button class="keyboard-button" id="ר" onclick="setLetter('ר')">ר</button>
+        <button class="keyboard-button" id="א" onclick="setLetter('א')">א</button>
+        <button class="keyboard-button" id="ט" onclick="setLetter('ט')">ט</button>
+        <button class="keyboard-button" id="ו"onclick="setLetter('ו')">ו</button>
+        <button class="keyboard-button" id="פ"onclick="setLetter('פ')">פ</button>
     </div>
     <div class="second-row">
-        <button class="keyboard-button" onclick="setLetter('ש')">ש</button>
-        <button class="keyboard-button" onclick="setLetter('ד')">ד</button>
-        <button class="keyboard-button" onclick="setLetter('ג')">ג</button>
-        <button class="keyboard-button" onclick="setLetter('כ')">כ</button>
-        <button class="keyboard-button" onclick="setLetter('ע')">ע</button>
-        <button class="keyboard-button" onclick="setLetter('י')">י</button>
-        <button class="keyboard-button" onclick="setLetter('ח')">ח</button>
-        <button class="keyboard-button" onclick="setLetter('ל')">ל</button>
+        <button class="keyboard-button" id="ש" onclick="setLetter('ש')">ש</button>
+        <button class="keyboard-button" id="ד" onclick="setLetter('ד')">ד</button>
+        <button class="keyboard-button" id="ג" onclick="setLetter('ג')">ג</button>
+        <button class="keyboard-button" id="כ" onclick="setLetter('כ')">כ</button>
+        <button class="keyboard-button" id="ע" onclick="setLetter('ע')">ע</button>
+        <button class="keyboard-button" id="י" onclick="setLetter('י')">י</button>
+        <button class="keyboard-button" id="ח" onclick="setLetter('ח')">ח</button>
+        <button class="keyboard-button" id="ל" onclick="setLetter('ל')">ל</button>
     </div>
     <div class="third-row">
         <button class="keyboard-button" onclick="deleteLetter()">Del</button>
-        <button class="keyboard-button" onclick="setLetter('ז')">ז</button>
-        <button class="keyboard-button" onclick="setLetter('ס')">ס</button>
-        <button class="keyboard-button" onclick="setLetter('ב')">ב</button>
-        <button class="keyboard-button" onclick="setLetter('ה')">ה</button>
-        <button class="keyboard-button" onclick="setLetter('נ')">נ</button>
-        <button class="keyboard-button" onclick="setLetter('מ')">מ</button>
-        <button class="keyboard-button" onclick="setLetter('צ')">צ</button>
-        <button class="keyboard-button" onclick="setLetter('ת')">ת</button>
+        <button class="keyboard-button" id="ז" onclick="setLetter('ז')">ז</button>
+        <button class="keyboard-button" id="ס" onclick="setLetter('ס')">ס</button>
+        <button class="keyboard-button" id="ב" onclick="setLetter('ב')">ב</button>
+        <button class="keyboard-button" id="ה" onclick="setLetter('ה')">ה</button>
+        <button class="keyboard-button" id="נ" onclick="setLetter('נ')">נ</button>
+        <button class="keyboard-button" id="מ" onclick="setLetter('מ')">מ</button>
+        <button class="keyboard-button" id="צ" onclick="setLetter('צ')">צ</button>
+        <button class="keyboard-button" id="ת" onclick="setLetter('ת')">ת</button>
         <button class="keyboard-button" onclick="checkGuss()">Enter</button>
     </div>
 </div>
