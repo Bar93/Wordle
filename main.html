@@ -5,9 +5,11 @@
     <title>Wordle</title>
     <script src="script.js" type="text/javascript"></script>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="animations.css">
+
 </head>
 <body onload=alert(game.secWord)>
-<h1> Wordle</h1>
+<h1 id="title"> Wordle</h1>
 
 <div class="game-board">
     <div id = "word1" class = "wordBox"><div id = "letter15" class = "letterBox"></div><div id = "letter14" class = "letterBox"></div><div id = "letter13" class = "letterBox"></div><div id = "letter12" class = "letterBox"></div><div id = "letter11" class = "letterBox"></div></div>
@@ -50,8 +52,6 @@
         <button class="keyboard-button" onclick="checkGuss()">Enter</button>
     </div>
 </div>
-
-
 
 </body>
 </html>

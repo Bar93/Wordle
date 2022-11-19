@@ -126,19 +126,24 @@ function paintCellAndKey(word){
             if (document.getElementById("letter" + row + j).style.background != "green") {
                 if ((letter1 == letter2) && (i != j)) {
                     document.getElementById("letter" + row + j).style.background = "yellow";
-                    document.getElementById(letter1).style.background = "yellow";
+                    if (document.getElementById(letter1).style.background != "green"){
+                        document.getElementById(letter1).style.background = "yellow";
+                    }
                 }
             }
             if ((document.getElementById("letter" + row + j).style.background != "green")&&(document.getElementById("letter" + row + j).style.background != "yellow"))
             {
                 if ((letter1 != letter2)) {
                     document.getElementById("letter" + row + j).style.background = "gray";
+                    if ((document.getElementById(letter1).style.background != "green")&&(document.getElementById(letter1).style.background != "yellow"))
                     document.getElementById(letter1).style.background = "gray";
                 }
             }
         }
     }
 }
+
+
 
 
 
