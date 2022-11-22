@@ -7,27 +7,22 @@ const game = {
     secWord: randomWord(),
 };
 
+let NUMBER_OF_GUESS = 6;
+let NUMBER_OF_CELL=5;
+
 
 function randomWord (){
     let randomNum = Math.ceil(Math.random()*20)-1;
     return wordList[randomNum];
 }
 
-function buildKeyBord (){
-
-}
-
-function checkUserInput (){
-
-}
-
 function setLetter(letter) {
     let cell=""
-    if (game.numOfCell==6){
+    if (game.numOfCell==NUMBER_OF_GUESS){
         return;
     }
     else {
-        if (game.numOfCell == 5) {
+        if (game.numOfCell == NUMBER_OF_CELL) {
             cell = terminalLetter(letter)
         }
         else {
@@ -57,6 +52,7 @@ function terminalLetter (letter){
     }
     return letter;
 }
+
 function deleteLetter() {
     let cell = game.numOfCell-1;
     if (cell-1==-1){
@@ -76,14 +72,14 @@ function deleteLetter() {
 }
 
 function checkGuss () {
-    if (game.numOfCell != 6) {
+    if (game.numOfCell != NUMBER_OF_GUESS) {
         return;
     } else {
         let row = game.numOfRow;
         let cell = 1;
         let word = "";
         let index = 0;
-        while (index < 5) {
+        while (index < NUMBER_OF_CELL) {
             word = word + document.getElementById("letter" + row + cell).innerText;
             cell++;
             index++;
@@ -91,15 +87,15 @@ function checkGuss () {
         if (checkIfWordInStock(word)) {
             paintCellAndKey(word);
             if (word == game.secWord) {
-                alert("you win");
+                messages("you win");
             } else{
                 game.numOfRow++;
                 game.numOfCell=1;
-                if (game.numOfRow==7){
-                    alert("you lose")
+                if (game.numOfRow==NUMBER_OF_GUESS+1){
+                    messages("you lose, the word is: "+game.secWord)
                 }
             }
-        } else alert("no in stock")
+        } else messages("The word doesnt exist")
     }
 }
 
@@ -139,6 +135,21 @@ function paintCellAndKey(word){
                     document.getElementById(letter1).style.background = "gray";
                 }
             }
+        }
+    }
+}
+
+function messages (message){
+    let modal = document.getElementById("myModal");
+    modal.innerText=message;
+    let span = document.getElementsByClassName("close");
+        modal.style.display = "block";
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
         }
     }
 }
