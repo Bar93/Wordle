@@ -16,6 +16,22 @@ function randomWord (){
     return wordList[randomNum];
 }
 
+document.addEventListener("keyup", (e) => {
+    let pressedKey = String(e.key)
+    if (pressedKey === "Backspace") {
+        deleteLetter()
+        return
+    }
+    if (pressedKey === "Enter") {
+        checkGuss()
+        return
+    }
+    if (pressedKey>='א'&&pressedKey<='ת') {
+        setLetter(pressedKey)
+    }
+})
+
+
 function setLetter(letter) {
     let cell=""
     if (game.numOfCell==NUMBER_OF_GUESS){
@@ -153,6 +169,7 @@ function messages (message){
         }
     }
 }
+
 
 
 
