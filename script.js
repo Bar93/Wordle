@@ -103,15 +103,15 @@ function checkGuss () {
         if (checkIfWordInStock(word)) {
             paintCellAndKey(word);
             if (word == game.secWord) {
-                messages("you win");
+                messages("you win"+"\n"+"F5 for restart");
             } else{
                 game.numOfRow++;
                 game.numOfCell=1;
                 if (game.numOfRow==NUMBER_OF_GUESS+1){
-                    messages("you lose, the word is: "+game.secWord)
+                    messages("you lose, the word is: "+game.secWord+"\n"+"x");
                 }
             }
-        } else messages("The word doesnt exist")
+        } else messages("The word doesnt exist"+"\n"+"x");
     }
 }
 
